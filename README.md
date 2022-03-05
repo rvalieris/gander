@@ -1,5 +1,5 @@
 ```R
-source("gander.R")
+library(gander)
 options(repr.plot.width = 15, repr.plot.height = 9)
 ```
 
@@ -42,6 +42,7 @@ gander(iris, Petal.Length)
 
 
 ```R
+suppressMessages(library(tidyverse))
 # works nicely with tidyverse stuff
 # modify your data.frame and pipe to gander
 mutate_at(mtcars, c("cyl","vs","am","gear"), factor) %>% gander(mpg)
@@ -79,7 +80,7 @@ gander(HairEyeColor, Eye)
 
 
 ```R
- gander(Titanic, Survived)
+gander(Titanic, Survived)
 ```
 
 
@@ -98,6 +99,44 @@ gander(quakes)
 ![png](README_files/README_8_0.png)
     
 
+
+
+```R
+gander(diamonds, carat)
+```
+
+
+    
+![png](README_files/README_9_0.png)
+    
+
+
+
+```R
+select(starwars, -name, -starships) %>% gander(height)
+```
+
+
+    
+![png](README_files/README_10_0.png)
+    
+
+
+
+```R
+select(storms, -name) %>% gander(status)
+```
+
+
+    
+![png](README_files/README_11_0.png)
+    
+
+
+
+```R
+
+```
 
 
 ```R
